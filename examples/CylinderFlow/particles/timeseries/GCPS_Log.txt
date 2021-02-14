@@ -1,0 +1,24 @@
+﻿#GCPS: Reading Gmsh mesh file [CAD_fluid.msh]
+       NumEles = 106175
+       NumVertex = 23139
+       NumFacets = 224163
+       MaxEdgeLength = 0.119966
+       NumBCMarkers = 4
+       NumBCFacets = 372
+       ---Name:default Marker:0
+       ---Name:domain Marker:3
+       ---Name:inlet Marker:1
+       ---Name:outlet Marker:2
+#GCPS: Reading velocity solution file [Pk2_vel_hdg.npy]
+       FEM_Scheme Pk Order=2, Local DOFs=10, NumEles=318525
+       NumBoundaryVerts = 11807
+       NumBoundaryFacets = 23626
+       Set BC[inlet] as type: [REFLECT]
+       Set BC[outlet] as type: [FREEZE]
+#GCPS: Timestep= 0.002500
+	SimTime= 1.000000
+	NumTimesteps= 400
+#GCPS: Generate random particles from bounding box
+       Bbox = (0.000100,0.000100,0.000100) - (0.019900,0.999900,0.249900)
+       NumPts = 500-0 = 500
+#GCPS: Create Brownian motion object using random seed=1591593751
