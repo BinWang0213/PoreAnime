@@ -43,7 +43,7 @@ Times=data['Times']
 Initial_pos=Coords[0,:]
 Focal_point=Coords[1,:]
 View_up=[0.0, 0.0, 1.0]
-NumFrames=250
+NumFrames=250 #25 FPS, 10 sec
 
 #You may need to change this to stop our streamline earlier
 Total_time=Times[-1] 
