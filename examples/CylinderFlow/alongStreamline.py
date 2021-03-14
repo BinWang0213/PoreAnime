@@ -1,5 +1,7 @@
 from paraview.simple import * 
 import numpy as np
+import os
+import sys
 
 
 ###--------------------Streamline Interpation Funcs----------------
@@ -41,7 +43,7 @@ Times=data['Times']
 Initial_pos=Coords[0,:]
 Focal_point=Coords[1,:]
 View_up=[0.0, 0.0, 1.0]
-NumFrames=1000
+NumFrames=250
 
 #You may need to change this to stop our streamline earlier
 Total_time=Times[-1] 
@@ -51,7 +53,9 @@ Timestep=Total_time/NumFrames
 animationScene.NumberOfFrames += NumFrames
 frameID=0
 
-
+#Screenshoot output path
+save_animation = True
+out_dir = r"E:\\movie3\\"
 for i in range(NumFrames-1):
     renderView1.Update()
     
@@ -70,6 +74,12 @@ for i in range(NumFrames-1):
     
     #Move to the next frame
     animationScene.GoToNext()
+
+
+    #Save screenshot
+    if(save_animation):
+        image_name = os.path.join(out_dir, "%06d.png" % (frameID))
+        SaveScreenshot(image_name,ImageResolution=[1920, 1080])
     frameID+=1
 
 
